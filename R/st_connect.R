@@ -37,6 +37,9 @@ st_connect = function(x, y, ids = st_nn(x, y, ...), ...) {
 
   result = st_sfc()
 
+  # Progress bar
+  pb = utils::txtProgressBar(min = 0, max = x_features, initial = 0, style = 3)
+
   for(i in 1:x_features) {
 
     for(j in ids[[i]]) {
@@ -50,7 +53,12 @@ st_connect = function(x, y, ids = st_nn(x, y, ...), ...) {
 
     }
 
+    # Progress
+    utils::setTxtProgressBar(pb, i)
+
   }
+
+  cat("\n")
 
   return(result)
 

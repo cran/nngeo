@@ -13,7 +13,7 @@ st_nn(x, y, sparse = TRUE, k = 1, maxdist = Inf, returnDist = FALSE)
 
 \item{sparse}{logical; should a sparse index list be returned (TRUE) or a dense logical matrix? See below.}
 
-\item{k}{The maximum number of nearest neighbours to compute. Default is \code{1}, meaning that only a single point (nearest neighbor) is returned}
+\item{k}{The maximum number of nearest neighbors to compute. Default is \code{1}, meaning that only a single point (nearest neighbor) is returned}
 
 \item{maxdist}{Search radius (in meters). Points farther than search radius are not considered. Default is \code{Inf} meaning that search is unconstrained}
 
@@ -26,8 +26,9 @@ If \code{sparse=FALSE}, returned object is a logical matrix with element \code{[
 The function returns the indices of layer \code{y} which are nearest neighbors of each feature of layer \code{x}. The number of nearest neighbors \code{k} and the search radius \code{maxdist} can be modified.\cr\cr
 The function has three modes of operation -
 \itemize{
-\item{lon-lat / points - Calculation based on \code{sf::st_distance}, which internally uses \code{geosphere::distGeo}}
-\item{projected / points - Calculation using \code{RANN::nn2}, a fast search method based on the ANN C++ library}
+\item{lon-lat points - Calculation using C implementation (see references) of the Vincenty distance, which is identical to \code{geosphere::distVincentyEllipsoid} and \code{sf::st_distance}}
+\item{projected points - Calculation using \code{RANN::nn2}, a fast search method based on the ANN C++ library}
+\item{lines or polygons, either lon-lat or projected - Calculation based on \code{sf::st_distance}, which internally uses \code{geosphere::distGeo}}
 }
 }
 \examples{
@@ -39,6 +40,11 @@ towns = st_transform(towns, 32636)
 
 # Nearest town
 st_nn(cities, towns)
+
+# Using 'sfc' objects
+st_nn(st_geometry(cities), st_geometry(towns))
+st_nn(cities, st_geometry(towns))
+st_nn(st_geometry(cities), towns)
 
 # With distances
 st_nn(cities, towns, returnDist = TRUE)
@@ -61,13 +67,16 @@ st_join(towns, cities, st_nn, k = 1)
 # Large example
 n = 1000
 x = data.frame(
-  lon = (runif(1000) * 2 - 1) * 70,
-  lat = (runif(1000) * 2 - 1) * 70
+  lon = (runif(n) * 2 - 1) * 70,
+  lat = (runif(n) * 2 - 1) * 70
 )
 x = st_as_sf(x, coords = c("lon", "lat"), crs = 4326)
 start = Sys.time()
-result = st_nn(x, x, k = 10)
+result = st_nn(x, x, k = 3)
 end = Sys.time()
 end - start
 }
+}
+\references{
+C code for Vincenty distance by Jan Antala (\url{https://github.com/janantala/GPS-distance/blob/master/c/distance.c})
 }
