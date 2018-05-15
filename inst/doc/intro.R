@@ -25,14 +25,12 @@ plot(st_geometry(water), col = "lightblue", add = TRUE)
 plot(st_geometry(towns), col = "grey", pch = 1, add = TRUE)
 plot(st_geometry(cities), col = "red", pch = 1, add = TRUE)
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ])
-
 ## ------------------------------------------------------------------------
+nn = st_nn(cities, towns[1:5, ], progress = FALSE)
 nn
 
-## ---- warning=FALSE------------------------------------------------------
-l = st_connect(cities, towns[1:5, ], ids = nn)
+## ------------------------------------------------------------------------
+l = st_connect(cities, towns[1:5, ], ids = nn, progress = FALSE)
 l
 
 ## ----st_connect, fig.align='center', fig.width=5, fig.height=5, fig.cap="Nearest neighbor match between \\texttt{cities} (in red) and \\texttt{towns[1:5, ]} (in grey)"----
@@ -50,34 +48,29 @@ text(
   1:5, pos = 4
 )
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ], sparse = FALSE)
-
 ## ------------------------------------------------------------------------
+nn = st_nn(cities, towns[1:5, ], sparse = FALSE, progress = FALSE)
 nn
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ], k = 2)
-
 ## ------------------------------------------------------------------------
+nn = st_nn(cities, towns[1:5, ], k = 2, progress = FALSE)
 nn
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ], sparse = FALSE, k = 2)
-
-## ------------------------------------------------------------------------
+nn = st_nn(cities, towns[1:5, ], sparse = FALSE, k = 2, progress = FALSE)
 nn
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ], sparse = FALSE, k = 2, returnDist = TRUE)
-
 ## ------------------------------------------------------------------------
+nn = st_nn(
+  cities, towns[1:5, ], sparse = FALSE, k = 2, returnDist = TRUE, 
+  progress = FALSE
+)
 nn
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(cities, towns[1:5, ], sparse = FALSE, k = 2, returnDist = TRUE, maxdist = 50000)
-
 ## ------------------------------------------------------------------------
+nn = st_nn(
+  cities, towns[1:5, ], sparse = FALSE, k = 2, returnDist = TRUE, maxdist = 50000, 
+  progress = FALSE
+)
 nn
 
 ## ---- results='hide'-----------------------------------------------------
@@ -92,12 +85,14 @@ plot(st_geometry(towns), col = "darkgrey")
 plot(st_geometry(l), add = TRUE)
 plot(st_geometry(cities), col = "red", add = TRUE)
 
-## ---- results='hide'-----------------------------------------------------
-nn = st_nn(water[-1, ], towns, k = 20)
+## ------------------------------------------------------------------------
+nn = st_nn(water[-1, ], towns, k = 20, progress = FALSE)
+
+## ---- warning=FALSE------------------------------------------------------
+l = st_connect(water[-1, ], towns, ids = nn, progress = FALSE)
 
 ## ----water_towns, fig.align='center', fig.width=5, fig.height=7, warning=FALSE, fig.cap="Nearest 20 \\texttt{towns} features from each \\texttt{water} polygon"----
-l = st_connect(water[-1, ], towns, ids = nn)
-plot(st_geometry(water[-1, ]), col = "lightblue")
+plot(st_geometry(water[-1, ]), col = "lightblue", border = "grey")
 plot(st_geometry(towns), col = "darkgrey", add = TRUE)
-plot(st_geometry(l), add = TRUE)
+plot(st_geometry(l), col = "red", add = TRUE)
 
