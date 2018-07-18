@@ -89,7 +89,7 @@ plot(st_geometry(cities), col = "red", add = TRUE)
 nn = st_nn(water[-1, ], towns, k = 20, progress = FALSE)
 
 ## ---- warning=FALSE------------------------------------------------------
-l = st_connect(water[-1, ], towns, ids = nn, progress = FALSE)
+l = st_connect(water[-1, ], towns, ids = nn, progress = FALSE, dist = 100)
 
 ## ----water_towns, fig.align='center', fig.width=5, fig.height=7, warning=FALSE, fig.cap="Nearest 20 \\texttt{towns} features from each \\texttt{water} polygon"----
 plot(st_geometry(water[-1, ]), col = "lightblue", border = "grey")
