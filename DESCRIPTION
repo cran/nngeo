@@ -1,7 +1,7 @@
 Package: nngeo
 Type: Package
 Title: k-Nearest Neighbor Join for Spatial Data
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person("Michael", "Dorman", email = "dorman@post.bgu.ac.il", role = c("aut", "cre")),
     person("Johnathan", "Rush", email = "johnathan.rush@mssm.edu", role = c("ctb")),
@@ -19,11 +19,11 @@ VignetteBuilder: knitr
 BugReports: https://github.com/michaeldorman/nngeo/issues
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2018-07-18 10:43:31 UTC; michael
+Packaged: 2018-07-19 12:00:07 UTC; michael
 Author: Michael Dorman [aut, cre],
   Johnathan Rush [ctb],
   Ian Hough [ctb],
   Jan Antala [ctb, cph] (Author of C code for Vincenty distance)
 Maintainer: Michael Dorman <dorman@post.bgu.ac.il>
 Repository: CRAN
-Date/Publication: 2018-07-18 11:00:03 UTC
+Date/Publication: 2018-07-21 14:50:02 UTC

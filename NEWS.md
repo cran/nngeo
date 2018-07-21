@@ -17,12 +17,16 @@
 * Fixed progress bar issues
 * Changed formatting in vignette
 
-# nngeo 0.2.0
+# nngeo 0.2.0 (2018-07-18)
 
 * Added OpenMP support
 * Added 'dist' (sampling point interval) parameter for 'st_connect'
 * Fixed progress bar issues in 'st_connect'
 * Switched from 'for' loop to 'lapply' in 'st_connect'
+
+## nngeo 0.2.1
+
+* Removed OpenMP support due to issue with Solaris
 
 # To do:
 
