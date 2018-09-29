@@ -74,7 +74,10 @@ nn = st_nn(
 nn
 
 ## ---- results='hide'-----------------------------------------------------
-st_join(cities, towns[1:5, ], join = st_nn, k = 2, maxdist = 50000)
+cities1 = st_join(cities, towns[1:5, ], join = st_nn, k = 2, maxdist = 50000)
+
+## ------------------------------------------------------------------------
+cities1
 
 ## ---- results='hide', warning=FALSE--------------------------------------
 x = st_nn(cities, towns, k = 10)
