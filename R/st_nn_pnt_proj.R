@@ -3,6 +3,9 @@
   x_coord = sf::st_coordinates(x)
   y_coord = sf::st_coordinates(y)
 
+  # Progress bar
+  if(progress) pb = utils::txtProgressBar(min = 0, max = 1, initial = 0, style = 3)
+
   if(maxdist == Inf) {
     nn = RANN::nn2(
       query = x_coord,
@@ -31,7 +34,15 @@
   names(ids) = NULL
   dists = split(dists, 1:nrow(dists))
   dists = lapply(dists, function(x) c(x[!is.na(x)]))
+  crs_units = st_crs(x)$units
+  dists = lapply(dists, units::set_units, crs_units, mode = "standard")
+  dists = lapply(dists, units::set_units, "m", mode = "standard")
+  dists = lapply(dists, as.numeric)
   names(dists) = NULL
+
+  # Progress
+  if(progress) utils::setTxtProgressBar(pb, 1)
+  if(progress) cat("\n")
 
   # Return sparse lists
   return(list(ids, dists))

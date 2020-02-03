@@ -1,10 +1,13 @@
 #' Point layer of towns in Israel
 #'
-#' A \code{sf} POINT layer of all towns in Israel whose name starts with the letter "A".
+#' A \code{sf} POINT layer of towns in Israel, based on a subset from the \code{maps::world.cities} dataset.
 #'
-#' @format A \code{sf} POINT layer with 93 features and 1 attribute:
+#' @format A \code{sf} POINT layer with 193 features and 4 attributes:
 #' \describe{
 #'   \item{name}{Town name}
+#'   \item{country.etc}{Country name}
+#'   \item{pop}{Population size}
+#'   \item{capital}{Is it a capital?}
 #' }
 
 "towns"
@@ -47,6 +50,26 @@
 #' }
 
 "dem"
+
+#' Sample network dataset: lines
+#'
+#' An \code{sf} object based on the \code{edge_table} sample dataset from pgRouting 2.6 tutorial
+#'
+#' @format An \code{sf} object
+#' @references
+#' \url{https://docs.pgrouting.org/2.6/en/sampledata.html}
+
+"line"
+
+#' Sample network dataset: points
+#'
+#' An \code{sf} object based on the \code{pointsOfInterest} sample dataset from pgRouting 2.6 tutorial
+#'
+#' @format An \code{sf} object
+#' @references
+#' \url{https://docs.pgrouting.org/2.6/en/sampledata.html}
+
+"pnt"
 
 
 

@@ -6,7 +6,7 @@
 \alias{nngeo-package}
 \title{nngeo: k-Nearest Neighbor Join for Spatial Data}
 \description{
-K-nearest neighbor search for projected and non-projected 'sf' spatial layers. Nearest neighbor search uses (1) C code from 'GeographicLib' for lon-lat point layers, (2) function nn2() from package 'RANN' for projected point layers, or (3) function st_distance() from package 'sf' for line or polygon layers.
+K-nearest neighbor search for projected and non-projected 'sf' spatial layers. Nearest neighbor search uses (1) C code from 'GeographicLib' for lon-lat point layers, (2) function nn2() from package 'RANN' for projected point layers, or (3) function st_distance() from package 'sf' for line or polygon layers. The package also includes several other utility functions for spatial analysis.
 }
 \seealso{
 Useful links:
@@ -23,6 +23,7 @@ Other contributors:
 \itemize{
   \item Johnathan Rush \email{johnathan.rush@mssm.edu} [contributor]
   \item Ian Hough \email{hough@post.bgu.ac.il} [contributor]
+  \item Dominic Russel \email{domrussel@gmail.com} [contributor]
   \item Charles F.F Karney (Author of included C code from 'GeographicLib' for geodesic distance) [contributor, copyright holder]
 }
 
