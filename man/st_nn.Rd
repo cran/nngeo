@@ -11,7 +11,8 @@ st_nn(
   k = 1,
   maxdist = Inf,
   returnDist = FALSE,
-  progress = TRUE
+  progress = TRUE,
+  parallel = 1
 )
 }
 \arguments{
@@ -19,19 +20,21 @@ st_nn(
 
 \item{y}{Object of class \code{sf} or \code{sfc}}
 
-\item{sparse}{\code{logical}; should a sparse index list be returned (\code{TRUE}, the default) or a dense logical matrix? See below. This only affects the}
+\item{sparse}{\code{logical}; should a sparse index list be returned (\code{TRUE}, the default) or a dense logical matrix? See "Value" section below.}
 
 \item{k}{The maximum number of nearest neighbors to compute. Default is \code{1}, meaning that only a single point (nearest neighbor) is returned.}
 
-\item{maxdist}{Search radius (\strong{in meters}). Points farther than search radius are not considered. Default is \code{Inf} meaning that search is unconstrained}
+\item{maxdist}{Search radius (\strong{in meters}). Points farther than search radius are not considered. Default is \code{Inf}, meaning that search is unconstrained.}
 
 \item{returnDist}{\code{logical}; whether to return a second \code{list} with the distances between detected neighbors.}
 
-\item{progress}{Display progress bar? (default \code{TRUE}}
+\item{progress}{Display progress bar? The default is \code{TRUE}. When using \code{parallel>1}, a progress bar is not displayed regardless of \code{progress} argument.}
+
+\item{parallel}{Number of parallel processes. The default \code{parallel=1} implies ordinary non-parallel processing. Parallel processing is done with the \code{parallel} package.}
 }
 \value{
 \itemize{
-\item{If \code{sparse=TRUE} (the default), a sparse \code{list} with list element \code{i} being a numeric vector with the indices \code{j} of neighboring features from \code{y} for the feature \code{x[i,]}, or \code{integer(0)} in case there are no neighbors.}
+\item{If \code{sparse=TRUE} (the default), a sparse \code{list} with list element \code{i} being a numeric vector with the indices \code{j} of neighboring features from \code{y} for the feature \code{x[i,]}, or an empty vector (\code{integer(0)}) in case there are no neighbors.}
 \item{If \code{sparse=FALSE}, a \code{logical} matrix with element \code{[i,j]} being \code{TRUE} when \code{y[j,]} is a neighbor of \code{x[i]}.}
 \item{If \code{returnDists=TRUE} the function returns a \code{list}, with the first element as specified above, and the second element a sparse \code{list} with the distances (as \code{units} vectors, \strong{in meters}) between each pair of detected neighbors corresponding to the sparse \code{list} of indices.}
 }
@@ -91,9 +94,16 @@ x = data.frame(
 )
 x = st_as_sf(x, coords = c("lon", "lat"), crs = 4326)
 start = Sys.time()
-result = st_nn(x, x, k = 3)
+result1 = st_nn(x, x, k = 3)
 end = Sys.time()
 end - start
+
+# Large example - Geo points - Parallel processing
+start = Sys.time()
+result2 = st_nn(x, x, k = 3, parallel = 4)
+end = Sys.time()
+end - start
+all.equal(result1, result2)
 
 # Large example - Proj points
 n = 1000
@@ -110,7 +120,7 @@ end - start
 
 # Large example - Polygons
 set.seed(1)
-n = 50
+n = 150
 x = data.frame(
   lon = (runif(n) * 2 - 1) * 70,
   lat = (runif(n) * 2 - 1) * 70
@@ -119,10 +129,16 @@ x = st_as_sf(x, coords = c("lon", "lat"), crs = 4326)
 x = st_transform(x, 32630)
 x = st_buffer(x, 1000000)
 start = Sys.time()
-result = st_nn(x, x, k = 3)
-result[1:3]
+result1 = st_nn(x, x, k = 3)
 end = Sys.time()
 end - start
+
+# Large example - Polygons - Parallel processing
+start = Sys.time()
+result2 = st_nn(x, x, k = 3, parallel = 4)
+end = Sys.time()
+end - start
+all.equal(result1, result2)
 
 }
 }

@@ -44,7 +44,7 @@
 
 ## nngeo 0.2.8 (2019-05-12)
 
-* Change C code fron 'distance.c' to 'GeographicLib'
+* Change C code from 'distance.c' to 'GeographicLib'
 * Use C code through the C API instead of 'Rcpp'
 
 ## nngeo 0.2.9 (2019-08-07)
@@ -60,29 +60,35 @@
 * Added 'raster_extend', a wrapper around 'raster::extend'
 * When using 'returnDist=TRUE', distances are now returned as sparse 'list' rather than a 'matrix'
 
-## nngeo 0.3.4
+## nngeo 0.3.4 (2020-02-03)
 
 * 'st_nn' with 'returnDist=TRUE' returns named list with elements 'nn' and 'dist'
 * Replaced 'towns' dataset
-* Removed 'raster_*" functions
+* Removed 'raster_*" functions (moved to package 'geobgu')
 * Added 'focal2' function (a 3x3 focal filter on 'stars')
 * Added 'line' and 'pnt' sample data (based on pgRouting tutorial)
 * Added 'st_split_junctions' function
 * 'st_connect' now uses 'st_nearest_point' rather than point sampling
 * 'st_connect' removes CRS before calculating nearest point, to omit the warning when using lon-lat
 
-## Other ideas:
+## nngeo 0.3.7
 
+* Added parallel processing option for 'st_nn'
+* Added 'st_azimuth' function
+* Removed 'focal2' function (moved to package 'starsExtra')
+* 'st_nn' now raises error if any geometry is empty
+* Switched C API from '.Call' to '.C'
+
+## Other ideas
+
+* Add UTM zone function
+* Dealing with empty geometries (return 'NA' IDs and distances)
+* Parallel processing message
+* Parallel processing in other functions
 * Add 'split line to equal parts' function
 * Add 'round coord' function
 * Add 'extend lines' function
 * Add 'bridge lines to network' function
-* Add parallel processing option
-* Add 'st_az' function
 * Geodesic buffer
 * 'igraph' object from layer based on proximity
 * 3D distance of 'POINT Z' layers
-
-
-
-
