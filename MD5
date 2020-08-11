@@ -1,13 +1,13 @@
-ff25badd87478524b58c64ab8396aa50 *DESCRIPTION
+094b2b8e58d5f294c219ff7f39cb7e4e *DESCRIPTION
 2b68ef7d4f3f35f660f181e38e70fadb *LICENSE
 7f8b43d87f46f153f7c065eb4d32557a *NAMESPACE
-0c588ae0a8966bbdfac4d1b4e822650e *NEWS.md
+d3437a1eec82991f9f26d871c40278d8 *NEWS.md
 29c158db71d8a86b966f0c73c50cf90c *R/data.R
 26fcad161dc2ffcd3832464f190667f4 *R/nngeo-package.R
 9cbdcde91bdcdd4f6df992e299412593 *R/st_azimuth.R
 0009bd8ad4f72b1210f7b46d0f5cec3b *R/st_connect.R
 0d269e2e1bdeeed5153e478b71761fcd *R/st_ellipse.R
-f46320dec60ce474e83c5dff5bb92d6e *R/st_nn.R
+745bd3876e1fa99bfea2508518d2e2d0 *R/st_nn.R
 5bed9b7a03dc53c94c6698035d153b2e *R/st_nn_pnt_geo.R
 512b2571ce926078987fdec7ecd7ee14 *R/st_nn_pnt_proj.R
 0abfd513c37dd41f789e48d0eacfc0ea *R/st_nn_poly.R
@@ -15,7 +15,7 @@ f46320dec60ce474e83c5dff5bb92d6e *R/st_nn.R
 2c7a5b5e8c38a1c888d357c3fc102394 *R/st_remove_holes.R
 ccfc49ffe949598887d1cdf92dc871bd *R/st_segments.R
 f043753077ea304b6e4cad84469e1cb3 *R/st_split_junctions.R
-7990f3f036fc96d19bf034a54de7f477 *build/vignette.rds
+012e6b2ce33c2b3ba0bde25f6e29f0b7 *build/vignette.rds
 438f48054d6429f85ff181d3cfa912d0 *data/cities.RData
 8d5b9a634291bcb63ad3d27c5e2c3c28 *data/line.RData
 a5c9c715570db8d6c5f09f1e14f045ee *data/pnt.RData
@@ -23,9 +23,9 @@ a5c9c715570db8d6c5f09f1e14f045ee *data/pnt.RData
 02c0ab792d6b11a982fcfb2dc3440119 *data/water.RData
 963136ad439d0fbb111bb81196e8dd80 *inst/doc/intro.R
 4aac809e23f253bd4e21116b8436b401 *inst/doc/intro.Rmd
-17b297619a77b8caba8ca65da95b4dbc *inst/doc/intro.pdf
+912d68dd0195b55990bcb9f469d9b8a3 *inst/doc/intro.pdf
 2c761f56faf835048fcb5567a42b0e9e *inst/tinytest/test_st_connect.R
-7e98ad73d129b46ae96b5378d58e1583 *inst/tinytest/test_st_nn.R
+fd3bed3b9841b8e977c3c795f636b8f4 *inst/tinytest/test_st_nn.R
 bf5bd99429a74a9330399a016e2975d9 *man/cities.Rd
 51a4874a54f84a4c1895d8115df6b4ef *man/line.Rd
 73dec2eac3feae6ea8efdc3ebe05890a *man/nngeo-package.Rd
@@ -33,7 +33,7 @@ d60662b799ff9f2591ab7172b881999b *man/pnt.Rd
 b8f6a49c5e22c84d53e9920ff3d6b3ef *man/st_azimuth.Rd
 777fec68f9338257d824a8a8b644f51d *man/st_connect.Rd
 685d9b38277d962126c544d55863f0ef *man/st_ellipse.Rd
-52fa4712416ddb98e942204a06987e82 *man/st_nn.Rd
+498cb8e3854f5b1978eab8cf27678515 *man/st_nn.Rd
 dce3a98b023e74d0799060353ae82036 *man/st_postgis.Rd
 5c53f0b3e1d78c98b61e03569089a657 *man/st_remove_holes.Rd
 953e96bd897a2747ec729c1c583d4eb9 *man/st_segments.Rd
