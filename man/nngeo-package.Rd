@@ -6,11 +6,12 @@
 \alias{nngeo-package}
 \title{nngeo: k-Nearest Neighbor Join for Spatial Data}
 \description{
-K-nearest neighbor search for projected and non-projected 'sf' spatial layers. Nearest neighbor search uses (1) C code from 'GeographicLib' for lon-lat point layers, (2) function nn2() from package 'RANN' for projected point layers, or (3) function st_distance() from package 'sf' for line or polygon layers. The package also includes several other utility functions for spatial analysis.
+K-nearest neighbor search for projected and non-projected 'sf' spatial layers. Nearest neighbor search uses (1) C code from 'GeographicLib' for lon-lat point layers, (2) function knn() from package 'nabor' for projected point layers, or (3) function st_distance() from package 'sf' for line or polygon layers. The package also includes several other utility functions for spatial analysis.
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://michaeldorman.github.io/nngeo/}
   \item \url{https://github.com/michaeldorman/nngeo/}
   \item Report bugs at \url{https://github.com/michaeldorman/nngeo/issues/}
 }

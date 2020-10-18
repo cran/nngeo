@@ -28,9 +28,9 @@ st_nn(
 
 \item{returnDist}{\code{logical}; whether to return a second \code{list} with the distances between detected neighbors.}
 
-\item{progress}{Display progress bar? The default is \code{TRUE}. When using \code{parallel>1}, a progress bar is not displayed regardless of \code{progress} argument.}
+\item{progress}{Display progress bar? The default is \code{TRUE}. When using \code{parallel>1} or when input is projected points, a progress bar is not displayed regardless of \code{progress} argument.}
 
-\item{parallel}{Number of parallel processes. The default \code{parallel=1} implies ordinary non-parallel processing. Parallel processing is done with the \code{parallel} package.}
+\item{parallel}{Number of parallel processes. The default \code{parallel=1} implies ordinary non-parallel processing. Parallel processing is not applicable for projected points, where calculation is already highly optimized through the use of \code{nabor::knn}. Parallel processing is done with the \code{parallel} package.}
 }
 \value{
 \itemize{
@@ -44,7 +44,7 @@ Returns the indices of layer \code{y} which are nearest neighbors of each featur
 The function has three modes of operation:
 \itemize{
 \item{lon-lat points—Calculation using C code from \code{GeographicLib}, similar to \code{sf::st_distance}}
-\item{projected points—Calculation using \code{RANN::nn2}, a fast search method based on the ANN C++ library}
+\item{projected points—Calculation using \code{nabor::knn}, a fast search method based on the libnabo C++ library}
 \item{lines or polygons, either lon-lat or projected—Calculation based on \code{sf::st_distance}}
 }
 }
@@ -57,15 +57,15 @@ towns = st_transform(towns, 32636)
 water = st_transform(water, 32636)
 
 # Nearest town
-st_nn(cities, towns)
+st_nn(cities, towns, progress = FALSE)
 
 # Using 'sfc' objects
-st_nn(st_geometry(cities), st_geometry(towns))
-st_nn(cities, st_geometry(towns))
-st_nn(st_geometry(cities), towns)
+st_nn(st_geometry(cities), st_geometry(towns), progress = FALSE)
+st_nn(cities, st_geometry(towns), progress = FALSE)
+st_nn(st_geometry(cities), towns, progress = FALSE)
 
 # With distances
-st_nn(cities, towns, returnDist = TRUE)
+st_nn(cities, towns, returnDist = TRUE, progress = FALSE)
 
 \dontrun{
 

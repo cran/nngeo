@@ -83,13 +83,19 @@
 
 * Switched from 'testthat' to 'tinytest'
 
-## nngeo 0.3.9
+## nngeo 0.3.9 (2020-08-11)
 
 * Fixed bug in 'st_nn' when 'parallel>1'
 
+## nngeo 0.4.0
+
+* Added 'pkgdown' site
+* Ignoring 'parallel' argument for projected points input in 'st_nn'
+* Switched from 'RANN' to 'nabor'
+
 ## Other ideas
 
-* https://www.spatialanalytics.co.nz/post/2017/09/11/a-parallel-function-for-spatial-analysis-in-r/
+* Add 'data-raw'
 * Add 'arrowhead' function
 * Add UTM zone function
 * Parallel processing message
@@ -101,5 +107,4 @@
 * Geodesic buffer (using geographiclib)
 * 'igraph' object from layer based on proximity
 * 3D distance of 'POINT Z' layers
-
 
