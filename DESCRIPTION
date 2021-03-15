@@ -1,7 +1,7 @@
 Package: nngeo
 Type: Package
 Title: k-Nearest Neighbor Join for Spatial Data
-Version: 0.4.1
+Version: 0.4.2
 Authors@R: c(
     person("Michael", "Dorman", email = "dorman@post.bgu.ac.il", role = c("aut", "cre")),
     person("Johnathan", "Rush", email = "johnathan.rush@mssm.edu", role = c("ctb")),
@@ -23,7 +23,7 @@ URL: https://michaeldorman.github.io/nngeo/,
 BugReports: https://github.com/michaeldorman/nngeo/issues/
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2021-01-07 09:44:37 UTC; michael
+Packaged: 2021-03-15 17:10:05 UTC; michael
 Author: Michael Dorman [aut, cre],
   Johnathan Rush [ctb],
   Ian Hough [ctb],
@@ -33,4 +33,4 @@ Author: Michael Dorman [aut, cre],
     'GeographicLib' for geodesic distance)
 Maintainer: Michael Dorman <dorman@post.bgu.ac.il>
 Repository: CRAN
-Date/Publication: 2021-01-07 10:30:02 UTC
+Date/Publication: 2021-03-15 17:40:06 UTC

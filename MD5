@@ -1,7 +1,7 @@
-c4d1b2cac8f12cc4da4854429dfeb619 *DESCRIPTION
+19c2bb9c648fdd3c1ea98ff50e5acc71 *DESCRIPTION
 2b68ef7d4f3f35f660f181e38e70fadb *LICENSE
 7782e589f1011f19acd26263e516cd97 *NAMESPACE
-440c5801af41961b5ec0f481b2e54be4 *NEWS.md
+754b31c77784a65358d7bad95fe386fa *NEWS.md
 f13fea314af1f8942cfa8a515a8235e9 *R/data.R
 26fcad161dc2ffcd3832464f190667f4 *R/nngeo-package.R
 f8f72f068ebef6860e6b0b9a39c68002 *R/st_azimuth.R
@@ -14,15 +14,15 @@ d24af1c9feb72137f40d8459600a39bd *R/st_nn.R
 4f2adbc06fae9eee26d94e6253a41905 *R/st_postgis.R
 a266ea604bf8a9fbb619f906745f9dc4 *R/st_remove_holes.R
 340dcc71453011d66d3b1431fd1da619 *R/st_segments.R
-0ee8442192f0d72553d5539c3c77d4ed *build/vignette.rds
+23497fa4e65ee1972e4711baae6fe7bd *build/vignette.rds
 438f48054d6429f85ff181d3cfa912d0 *data/cities.RData
 84baf708572df5ae06055ca42cb14edc *data/line.rda
 ae90cebd37169247132addf15245ddd1 *data/pnt.RData
 08c2ee29a682ab40556b62578eba4351 *data/towns.RData
 02c0ab792d6b11a982fcfb2dc3440119 *data/water.RData
-963136ad439d0fbb111bb81196e8dd80 *inst/doc/intro.R
-4aac809e23f253bd4e21116b8436b401 *inst/doc/intro.Rmd
-b45c54229b8b61b994d28816ad2925f8 *inst/doc/intro.pdf
+bb52422e24f77b3408f03e2a002392f8 *inst/doc/intro.R
+fbb42ea71554c0a9cb583b581f01d5a6 *inst/doc/intro.Rmd
+bebd82f69235416c3e2db6ffb35724af *inst/doc/intro.html
 2c761f56faf835048fcb5567a42b0e9e *inst/tinytest/test_st_connect.R
 fd3bed3b9841b8e977c3c795f636b8f4 *inst/tinytest/test_st_nn.R
 1e7ba4744d65abce2e0b0385d02929a6 *man/cities.Rd
@@ -43,4 +43,4 @@ eebce77788c6993bc9eff33345857cce *man/st_segments.Rd
 a243bb6c99faf8525b43b877e7c2d40b *src/geodesic.h
 c3ef09608381f873a12bda9919d19ab2 *src/nngeo_init.c
 fa0307d9685cfe9da434356782a5a44d *tests/tinytest.R
-4aac809e23f253bd4e21116b8436b401 *vignettes/intro.Rmd
+fbb42ea71554c0a9cb583b581f01d5a6 *vignettes/intro.Rmd

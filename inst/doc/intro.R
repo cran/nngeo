@@ -5,6 +5,13 @@ knitr::opts_chunk$set(
 )
 library(nngeo)
 
+## ---- eval=FALSE--------------------------------------------------------------
+#  install.packages("remotes")
+#  remotes::install_github("michaeldorman/nngeo")
+
+## ---- eval=FALSE--------------------------------------------------------------
+#  install.packages("nngeo")
+
 ## ---- include=FALSE-----------------------------------------------------------
 data(cities)
 data(towns)
