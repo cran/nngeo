@@ -102,13 +102,17 @@
 
 * Minor fixes in vignette
 
-## nngeo 0.4.3
+## nngeo 0.4.3 (2021-06-13)
 
 * Modified vignette, with an example of adding "distance to nearest" column
 
+## nngeo 0.4.4
+
+* Improved 'st_segments' using 'data.table' (Attilio Benini)
+* In 'st_remove_holes', when polygons are in lat/lon, 'lwgeoim::st_geod_area' is used automatically instead of 'sf::st_area' (Arnaud Tarroux)
+
 ## Other ideas
 
-* Check if 'max_area' in 'st_remove_holes' works with 'units'
 * Keep 'x' and 'y' attributes in output of 'st_connect'
 * http://r-posts.com/isovists-using-uniform-ray-casting-in-r/
 * Add 'data-raw'

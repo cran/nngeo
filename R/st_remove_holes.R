@@ -2,8 +2,7 @@
 #'
 #' The function removes all polygon holes and return the modified layer
 #' @param x Object of class \code{sf}, \code{sfc} or \code{sfg}, of type \code{"POLYGON"} or \code{"MULTIPOLYGON"}
-#' @param max_area Maximum area of holes to be removed (\code{numeric} or \code{units}) in the units
-#'  of \code{x}). Default value (\code{0}) causes removing all holes.
+#' @param max_area Maximum area of holes to be removed (\code{numeric}), in the units of \code{x} or in \code{[m^2]} for layers in geographic projection (lon/lat). Default value (\code{0}) causes removing all holes.
 #' @return Object of same class as \code{x}, with holes removed
 #' @references Following the StackOverflow answer by user \code{lbusett}:
 #'
@@ -94,7 +93,8 @@ st_remove_holes = function(x, max_area = 0) {
       if(length(geom[i][[1]]) > 1){
         if (max_area > 0) {
           holes = lapply(geom[i][[1]], function(x) {st_polygon(list(x))})[-1]
-          areas = c(Inf,sapply(holes, st_area))
+          holes = lapply(holes, function(h) st_sfc(h, crs = st_crs(x)))
+          areas = c(Inf, sapply(holes, st_area))
           geom[i] = st_polygon(geom[i][[1]][which(areas > max_area)])
         } else {
           geom[i] = st_polygon(geom[i][[1]][1])
@@ -107,7 +107,8 @@ st_remove_holes = function(x, max_area = 0) {
         if(length(tmp[j][[1]]) > 1){
           if (max_area > 0) {
             holes = lapply(tmp[j][[1]], function(x) {st_polygon(list(x))})[-1]
-            areas = c(Inf,sapply(holes, st_area))
+            holes = lapply(holes, function(h) st_sfc(h, crs = st_crs(x)))
+            areas = c(Inf, sapply(holes, st_area))
             tmp[j] = st_polygon(tmp[j][[1]][which(areas > max_area)])
           } else {
             tmp[j] = st_polygon(tmp[j][[1]][1])
