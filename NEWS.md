@@ -111,9 +111,14 @@
 * Improved 'st_segments' using 'data.table' (Attilio Benini)
 * In 'st_remove_holes', when polygons are in lat/lon, 'lwgeoim::st_geod_area' is used automatically instead of 'sf::st_area' (Arnaud Tarroux)
 
-## nngeo 0.4.5
+## nngeo 0.4.5 (2022-01-13)
 
 * Fixed 'st_nn' error when units are 'us-ft'
+
+## nngeo 0.4.6
+
+* Renamed geometry column name from 'geom' to 'geometry' in 'st_remove_holes'
+* Fixed e-mail and example ((Attilio Benini))
 
 ## Other ideas
 
