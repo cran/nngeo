@@ -1,7 +1,7 @@
 Package: nngeo
 Type: Package
 Title: k-Nearest Neighbor Join for Spatial Data
-Version: 0.4.7
+Version: 0.4.8
 Authors@R: c(
     person("Michael", "Dorman", email = "dorman@post.bgu.ac.il", role = c("aut", "cre")),
     person("Johnathan", "Rush", email = "johnathan.rush@mssm.edu", role = c("ctb")),
@@ -10,6 +10,7 @@ Authors@R: c(
     person("Luigi", "Ranghetti", email = "luigi.ranghetti@gmail.com", role = c("ctb")),
     person("Attilio", "Benini", email = "attilio.benini@gmx.net", role = c("ctb")),
     person("Arnaud", "Tarroux", email = "arnaud.tarroux@nina.no", role = c("ctb")),
+    person("Felipe", "Matas", email = "felipematas@yahoo.com", role = c("ctb")),
     person("Charles", "F.F Karney", role = c("ctb", "cph"), 
         comment="Author of included C code from 'GeographicLib' for geodesic distance"))
 Description: K-nearest neighbor search for projected and non-projected 'sf' spatial layers. Nearest neighbor search uses (1) C code from 'GeographicLib' for lon-lat point layers, (2) function knn() from package 'nabor' for projected point layers, or (3) function st_distance() from package 'sf' for line or polygon layers. The package also includes several other utility functions for spatial analysis.
@@ -25,7 +26,7 @@ URL: https://michaeldorman.github.io/nngeo/,
 BugReports: https://github.com/michaeldorman/nngeo/issues/
 Encoding: UTF-8
 NeedsCompilation: yes
-Packaged: 2023-04-24 15:24:26 UTC; michael
+Packaged: 2024-04-17 09:09:49 UTC; michael
 Author: Michael Dorman [aut, cre],
   Johnathan Rush [ctb],
   Ian Hough [ctb],
@@ -33,8 +34,9 @@ Author: Michael Dorman [aut, cre],
   Luigi Ranghetti [ctb],
   Attilio Benini [ctb],
   Arnaud Tarroux [ctb],
+  Felipe Matas [ctb],
   Charles F.F Karney [ctb, cph] (Author of included C code from
     'GeographicLib' for geodesic distance)
 Maintainer: Michael Dorman <dorman@post.bgu.ac.il>
 Repository: CRAN
-Date/Publication: 2023-04-24 18:30:02 UTC
+Date/Publication: 2024-04-17 09:30:03 UTC

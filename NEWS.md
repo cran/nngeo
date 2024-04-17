@@ -120,24 +120,11 @@
 * Renamed geometry column name from 'geom' to 'geometry' in 'st_remove_holes'
 * Fixed e-mail and example ((Attilio Benini))
 
-## nngeo 0.4.7
+## nngeo 0.4.7 (2023-04-24)
 
 * Fixed C warning
 
-Other ideas:
+## nngeo 0.4.8
 
-* Keep 'x' and 'y' attributes in output of 'st_connect'
-* http://r-posts.com/isovists-using-uniform-ray-casting-in-r/
-* Add 'data-raw'
-* Add 'arrowhead' function
-* Add UTM zone function
-* Parallel processing message
-* Parallel processing in other functions
-* Add 'split line to equal parts' function
-* Add 'round coord' function
-* Add 'extend lines' function
-* Add 'bridge lines to network' function
-* Geodesic buffer (using geographiclib)
-* 'igraph' object from layer based on proximity
-* 3D distance of 'POINT Z' layers
+* Fixed error when using CRS where units can't be accessed through 'sf'
 
